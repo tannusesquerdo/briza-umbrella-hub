@@ -11,15 +11,10 @@
     </v-col>
     
     <v-col class="mb-4 text-center px-0 py-0" cols="10">
-      <v-btn
-        color="success"
-        x-large
-        block
-        dark
-        class="uh-btn"
-      >
-        Get Started
-      </v-btn>
+      <uh-btn
+        text="Get Started"
+        :onClick="goToPage"
+      />
     </v-col>
 
     <v-col class=" text-center px-0 py-0" cols="10">
@@ -36,13 +31,21 @@
 
 <script>
   import Header from './Header';
+  import Button from '../Button';
 
   export default {
     name: 'GettingStarted',
 
     components: {
-      Header
+      Header,
+      'uh-btn': Button,
     },
+
+    methods: {
+      goToPage() {
+        this.$emit('btn-click', 1)
+      }
+    }
 
   }
 </script>
@@ -97,18 +100,6 @@
       margin: 0 !important;
       flex-grow: 0;
       margin-right: 9px !important;
-    }
-  }
-
-  .uh-btn {
-    border-radius: 8px !important;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1) !important;
-
-    .v-btn__content {
-      color: #333333;
-      font-weight: 700;
-      font-size: 1.125rem;
-      line-height: 1.318125rem;
     }
   }
 </style>

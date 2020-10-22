@@ -15,17 +15,12 @@
             contain
           />
           </div>
-          <!-- <div>
-            <v-rating
-            empty-icon="$mdiStarOutline"
-            full-icon="$mdiStar"
-            half-icon="$mdiStarHalfFull"
-            hover
-            length="5"
-            size="22"
-            value="3"
-          ></v-rating>
-          </div> -->
+          <div class="mt-4 card--stars">
+            <v-img
+              :src="require('../../assets/icons/stars-progress.svg')"
+              contain
+            />
+          </div>
         </div>
         <div class="card--price">
           <p>$125<span>/mo</span></p>
@@ -38,6 +33,7 @@
             block
             dark
             class="uh-btn"
+            @click="goToPage"
           >
             BUY NOW
           </v-btn>
@@ -56,17 +52,12 @@
             contain
           />
           </div>
-          <!-- <div>
-            <v-rating
-            empty-icon="$mdiStarOutline"
-            full-icon="$mdiStar"
-            half-icon="$mdiStarHalfFull"
-            hover
-            length="5"
-            size="22"
-            value="3"
-          ></v-rating>
-          </div> -->
+          <div class="mt-4 card--stars">
+            <v-img
+              :src="require('../../assets/icons/stars-geico.svg')"
+              contain
+            />
+          </div>
         </div>
         <div class="card--price">
           <p>$125<span>/mo</span></p>
@@ -79,6 +70,45 @@
             block
             dark
             class="uh-btn"
+            @click="goToPage"
+          >
+            BUY NOW
+          </v-btn>
+        </div>
+      </v-card>
+
+      <v-card
+        class="my-8 mx-auto card d-flex align-center justify-space-between flex-grow-1 flex-column py-9"
+        max-width="344"
+        outlined
+      >
+        <div class="card--header px-9">
+          <div>
+          <v-img
+            :src="require('../../assets/State-Farm.png')"
+            contain
+            width="290"
+          />
+          </div>
+          <div class="mt-4 card--stars">
+            <v-img
+              :src="require('../../assets/icons/stars-geico.svg')"
+              contain
+            />
+          </div>
+        </div>
+        <div class="card--price">
+          <p>$125<span>/mo</span></p>
+          <span class="per-year">$1500 per year</span>
+        </div>
+        <div class="card--actions px-6">
+          <v-btn
+            color="success"
+            x-large
+            block
+            dark
+            class="uh-btn"
+            @click="goToPage"
           >
             BUY NOW
           </v-btn>
@@ -107,15 +137,27 @@
       Header
     },
 
+     methods: {
+      goToPage() {
+        this.$emit('btn-click', 3)
+      }
+    }
+
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .card {
     width: 100%;
-    min-height: 274px;
+    min-height: 383px;
     max-height: 383px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+    &--stars {
+      width: 110px;
+      height: 22px;
+      margin: 0 auto;
+    }
 
     &--actions {
       width: 100%;

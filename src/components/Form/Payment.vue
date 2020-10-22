@@ -58,27 +58,23 @@
       </v-card>
     </v-col>
     <v-col class="mb-6 text-center px-0 py-0" cols="10">
-      <v-btn
-        color="success"
-        x-large
-        block
-        dark
-        class="uh-btn"
-      >
-        COMPLETE PURCHASE
-      </v-btn>
+      <uh-btn
+        text="COMPLETE PURCHASE"
+      />
     </v-col>
   </div>
 </template>
 
 <script>
   import Header from './Header';
+  import Button from '../Button';
 
   export default {
     name: 'Payment',
 
     components: {
-      Header
+      Header,
+      'uh-btn': Button,
     },
 
   }

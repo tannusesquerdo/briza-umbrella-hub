@@ -16,7 +16,7 @@
       <v-btn
         icon
         color="primary"
-        @click="onClose"
+        @click="$emit('on-close')"
       >
         <v-icon>mdi-close</v-icon>
       </v-btn>
@@ -27,15 +27,5 @@
 <script>
   export default {
     name: 'FormToolbar',
-
-    methods: {
-      onClose() {
-        this.$emit('onClose');
-      }
-    },
-
-    created() {
-      
-    },
   }
 </script>
